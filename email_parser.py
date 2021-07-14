@@ -1,22 +1,26 @@
 import re
+
+
 def email_parser(email):
       
-  key_former = ["user_name", "domain"]
+  key_former = ["username", "domain"]
 
-  pattern = re.compile(r"(^[a-z][a-z0-9]+[+]?[a-z0-9]*@[a-z][a-z]+\.com$)")
+  pattern = re.compile(r"(^[a-z][a-z0-9]+[+]?[a-z][a-z0-9]+@[a-z]+[0-9]*\.com$)") #re pattern
 
   email_checker = pattern.search(email) 
   if email_checker != None:
         
       value_former = re.split('@',email)
       dict_formed = {keys:values for keys,values in zip(key_former,value_former)}
-      #dict_form = {i:i+1 for i in len(key_former)}
-      return dict_formed  
+  
+      return f"\n{dict_formed}\n"  
 
   
-  return None
+  return f"\n{None}\n"
 
-print(email_parser('grtyolam+@gmail.com'))
+print(email_parser('grtyolamgee655fgf+bvbnb@gmail12.com'))
+
+
 
 
 
