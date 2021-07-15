@@ -21,11 +21,11 @@ def resource_deco(email='example@email.com', password='example123'): #resource t
 
                         #context manager for access_granted
                         with open('access_granted.txt', 'a') as write_in:
-                          write_in.write(f"{user['first_name']} {user['last_name']} viewed company resources on {final_time}\n")
+                          write_in.write(f"{user['role']} {user['first_name']} {user['last_name']} viewed company resources on {final_time}\n")
                           return grant_access
 
                     elif user['role'] != "admin" or user['role'] != "superadmin":
-                          denied_access = f"\n{user['first_name']} {user['last_name']} you are not allowed to view this resource\n"
+                          denied_access = f"{user['first_name']} {user['last_name']} you are not allowed to view this resource\n"
                           
                           #context manager for access_granted
                           with open('access_denied.txt', 'a') as write_in:

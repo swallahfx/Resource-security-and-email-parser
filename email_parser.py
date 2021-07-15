@@ -5,7 +5,7 @@ def email_parser(email):
       
   key_former = ["username", "domain"]
 
-  pattern = re.compile(r"(^[a-z][a-z0-9]+[+]?[a-z][a-z0-9]+@[a-z]+[0-9]*\.com$)") #re pattern
+  pattern = re.compile(r"(^[a-zA-Z][a-zA-Z0-9]+[+]?[a-zA-Z][a-zA-Z0-9]+@[a-zA-Z]+[0-9]*\.com$)") #re pattern
 
   email_checker = pattern.search(email) 
   if email_checker != None:
@@ -18,7 +18,7 @@ def email_parser(email):
   
   return f"\n{None}\n"
 
-print(email_parser('grtyolamgee655fgf+bvbnb@gmail12.com'))
+print(email_parser('grtyobvbnb@gmail12.com'))
 
 
 
